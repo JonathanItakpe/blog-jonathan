@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "blogApp",
   "private": true,
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
