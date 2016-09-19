@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -7,11 +8,15 @@
  * # MainCtrl
  * Controller of the blogApp
  */
-angular.module('blogApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+var MainCtrl = function ($scope,$http,__env) {
+		var main = this;
+		$http.get(__env.apiUrl + '/posts')
+		.then(function(response)
+			{ 
+				main.posts = response.data;
+			});
+		};
+
+MainCtrl.$inject = ['$scope', '$http', '__env'];
+angular.module('blogApp').controller('MainCtrl', MainCtrl);
+

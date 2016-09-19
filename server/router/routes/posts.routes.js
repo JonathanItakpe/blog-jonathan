@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var model = require('../../models');
+var Posts = model.posts;
 
 /* GET Request for all Blog Posts. */
 router.get('/', function(req, res, next) {
-  res.send('Here are the blog posts');
+  	// get all the posts
+	Posts.find({}, function(err, posts) {
+	  if (err) throw err;
+	  // object of all the users
+	  res.send(posts);
+	});
 });
 
 /* GET Request for a single Blog Post. */

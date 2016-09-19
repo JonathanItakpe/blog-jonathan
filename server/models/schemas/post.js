@@ -12,8 +12,6 @@ var postSchema = new Schema({
   updated_at: Date
 });
 
-postSchema.plugin(autoIncrement.plugin, 'Post');
-
 // on every save, add the date
 postSchema.pre('save', function(next) {
   // get the current date
