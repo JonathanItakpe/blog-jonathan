@@ -1,7 +1,5 @@
 'use strict';
 
-// app.js
-
 var env = {};
 
 // Import variables if present (from app.env.js)
